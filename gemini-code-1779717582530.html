@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soltech Electrical — Professional electrical installation, commercial solar systems, and CCTV surveillance networks across Kenya." />
+  <title>Soltech Electrical | Professional Electrical, Solar & CCTV Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ===== HERO PANEL ===== */
+    .hero {
+      position: relative; min-height: 550px; height: 75vh;
+      background: linear-gradient(rgba(13,33,55,0.85), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80');
+      background-size: cover; background-position: center;
+      display: flex; align-items: center; width: 100%; padding-top: 80px;
+    }
+    .hero-content { width: 100%; max-width: 850px; }
+    .hero h1 { color: var(--white); margin-bottom: 20px; text-transform: uppercase; }
+    .hero h1 span { color: var(--yellow); }
+    .hero-sub { color: rgba(255,255,255,0.9); font-size: clamp(1.05rem, 2.5vw, 1.25rem); margin-bottom: 35px; max-width: 680px; }
+    .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+
+    /* ===== LOCALIZED SERVICES GRID ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+    .service-card { padding: 25px; background: var(--white); display: flex; flex-direction: column; height: 100%; }
+    .service-card-img { width: 100%; height: 210px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; }
+    .service-card h3 { margin-bottom: 12px; font-size: 1.5rem; text-transform: uppercase; color: var(--navy); }
+    .service-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 15px; }
+    .service-link { font-weight: 700; color: var(--yellow2); font-size: 0.9rem; margin-top: auto; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .intro-img { width: 100%; height: 420px; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow2); }
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; gap: 30px; }
+      .intro-img { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Soltech <span>Electrical</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Project Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-yellow">⚡ Get Quote</a>
+        <button class="hamburger" aria-label="Toggle Menu Panel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Project Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-yellow">⚡ Get Quote</a>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Reliable Electrical, Solar & <span>CCTV Installation</span> Across Kenya</h1>
+        <p class="hero-sub">Providing top-tier engineering services from certified industrial grid networks to off-grid solar arrays and remote perimeter safety control systems.</p>
+        <div class="hero-btns">
+          <a href="services.html" class="btn btn-yellow">Explore Engineering Options</a>
+          <a href="contact.html" class="btn btn-outline">Request Assessment</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <h2>Premium Craftsmanship. Licensed Local Engineers.</h2>
+          <p style="margin-bottom: 20px;">Soltech Electrical handles complex power diagnostics, remote solar grids, structural lighting installations, and digital security layouts across all counties in Kenya.</p>
+          <p>We work directly alongside corporate project managers, factory stakeholders, and real estate developers to keep critical operational assets performing smoothly and safely.</p>
+        </div>
+        <div>
+          <img class="intro-img" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80" alt="Technical hands servicing machine parts on modern equipment installation site" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: var(--gray);">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 10px;">Our Core Site Operations</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 40px; color: var(--muted);">Certified commercial installations tailored for regional infrastructure needs.</p>
+      
+      <div class="services-grid">
+        <div class="card service-card">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" alt="Hands wiring circuit lines securely inside technical control box" />
+          <h3>Electrical Engineering</h3>
+          <p>Full-scale commercial building power wiring, distribution phase configuration, safety grounding, and infrastructure modification updates.</p>
+          <a href="services.html" class="service-link">View Specifications →</a>
+        </div>
+        <div class="card service-card">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=600&q=80" alt="Hands mounting power cables onto alternative energy components panel" />
+          <h3>Solar Integration</h3>
+          <p>Off-grid and hybrid industrial photovoltaic fields setup, battery bank deployment, and custom solar power systems maintenance.</p>
+          <a href="services.html" class="service-link">View Specifications →</a>
+        </div>
+        <div class="card service-card">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Close up view of hands assembling structural mounting system for remote digital security hardware unit" />
+          <h3>CCTV System Setup</h3>
+          <p>High-definition property surveillance video configurations, multichannel network video routing, and smartphone remote feed integration.</p>
+          <a href="services.html" class="service-link">View Specifications →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>Soltech <span>Electrical</span></h3>
+        <p class="footer-tagline">Licensed site electrical deployments, industrial off-grid solar arrays, corporate multi-camera CCTV tracking, and perimeter safety fencing systems inside Kenya.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Specializations</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Electrical Cabling</a></li>
+          <li><a href="services.html">Solar Solutions</a></li>
+          <li><a href="services.html">CCTV Surveillance</a></li>
+          <li><a href="services.html">Security Fencing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Regional Office</h4>
+        <ul class="footer-contact-list">
+          <li>📍 Nairobi, Kenya</li>
+          <li>📞 +254 110 423872</li>
+          <li>✉️ info@soltechelectrical.co.ke</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Soltech Electrical Kenya. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <div class="whatsapp-float">
+    <a href="https://wa.me/254110423872" target="_blank" rel="noopener" class="whatsapp-icon" aria-label="WhatsApp Support Link">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.297-.149-.52-.149-.198 0-.471-.074-.67-.297-.198-.218-.768-.748-.768-1.822 0-1.074.793-2.113.917-2.262.124-.149 1.556-2.376 3.769-3.333.527-.228.939-.363 1.261-.466.529-.168 1.012-.144 1.393-.099.425.063 1.303.533 1.487 1.047.186.515.186.955.13 1.047-.056.093-.211.149-.508.298m1.748-8.313A11.87 11.87 0 0011.993 2.25c-6.548 0-11.877 5.33-11.877 11.88 0 2.094.54 4.137 1.571 5.93l-1.67 6.102 6.233-1.636a11.84 11.84 0 005.736 1.483h.005c6.547 0 11.872-5.325 11.872-11.88 0-3.177-1.235-6.165-3.479-8.411z"/></svg>
+    </a>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* ============================================================
+   SOLTECH ELECTRICAL — shared.css
+   Colors: #0a0a0a | #0d2137 | #ffffff | #f5c518
+   Fonts: Bebas Neue (headings) | DM Sans (body)
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --black:   #0a0a0a;
+  --navy:    #0d2137;
+  --navy2:   #112944;
+  --white:   #ffffff;
+  --yellow:  #f5c518;
+  --yellow2: #d4aa10;
+  --gray:    #f4f6f9;
+  --gray2:   #e2e6ed;
+  --text:    #2c3e50;
+  --muted:   #6b7a8d;
+  --radius:  10px;
+  --shadow:  0 4px 24px rgba(13,33,55,0.10);
+  --shadow2: 0 8px 40px rgba(13,33,55,0.18);
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; width: 100%; overflow-x: hidden; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+  width: 100%;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5 {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+  color: var(--navy);
+}
+h1 { font-size: clamp(2.5rem, 6vw, 5.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+h4 { font-size: 1.25rem; }
+p  { font-size: 1rem; line-height: 1.7; color: var(--text); }
+
+/* ---------- Utility ---------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section-padding { padding: 80px 0; }
+@media (max-width: 768px) {
+  .section-padding { padding: 50px 0; }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-yellow { background: var(--yellow); color: var(--black); }
+.btn-yellow:hover { background: var(--yellow2); transform: translateY(-2px); }
+.btn-outline { border: 2px solid var(--white); color: var(--white); background: transparent; }
+.btn-outline:hover { background: var(--white); color: var(--navy); transform: translateY(-2px); }
+
+/* ---------- Header & Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  height: 70px;
+  box-shadow: var(--shadow);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.8rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.logo span { color: var(--yellow); }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 6px 0;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--yellow); }
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background: var(--yellow); transition: var(--transition);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-cta { display: flex; align-items: center; gap: 20px; }
+
+/* Hamburger Button Setup */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 28px; height: 20px;
+  position: relative;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block; width: 100%; height: 3px;
+  background: var(--white); border-radius: 2px;
+  position: absolute; left: 0; transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile Navigation Sliding Drawer */
+.mobile-nav {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 80%; max-width: 320px; height: 100vh;
+  background: var(--navy2);
+  z-index: 1050;
+  padding: 100px 30px 40px;
+  display: flex; flex-direction: column; gap: 24px;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.25);
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-nav.open { right: 0; }
+.mobile-nav a {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 12px;
+}
+.mobile-nav a:hover, .mobile-nav a.active { color: var(--yellow); padding-left: 6px; }
+.mobile-nav .btn { margin-top: 20px; width: 100%; }
+
+@media (max-width: 991px) {
+  .nav-links, .nav-cta .btn { display: none; }
+  .hamburger { display: block; }
+}
+
+/* ---------- Footer ---------- */
+footer { background: var(--black); color: rgba(255,255,255,0.7); padding: 70px 0 20px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 40px; margin-bottom: 50px;
+}
+.footer-brand h3 { color: var(--white); font-size: 1.8rem; margin-bottom: 15px; }
+.footer-brand h3 span { color: var(--yellow); }
+.footer-tagline { margin-bottom: 20px; font-size: 0.95rem; }
+.footer-col h4 { color: var(--white); font-size: 1.15rem; margin-bottom: 20px; text-transform: uppercase; border-bottom: 2px solid var(--navy); padding-bottom: 6px; display: inline-block; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a:hover { color: var(--yellow); padding-left: 4px; }
+.footer-contact-list { display: flex; flex-direction: column; gap: 14px; }
+.footer-contact-list li { display: flex; gap: 10px; font-size: 0.9rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 0.85rem; }
+
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 576px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ---------- Card Base ---------- */
+.card {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--gray2);
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow2); }
+
+/* ---------- CTA Section ---------- */
+.cta-section {
+  background: linear-gradient(135deg, var(--navy) 0%, #0a1a2e 100%);
+  padding: 80px 0; text-align: center; position: relative; overflow: hidden;
+}
+.cta-section h2 { color: var(--white); margin-bottom: 14px; }
+.cta-section p  { color: rgba(255,255,255,.7); margin-bottom: 32px; font-size: 1.05rem; }
+
+/* ---------- Floating WhatsApp ---------- */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 999; }
+.whatsapp-icon {
+  width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: var(--transition);
+}
+.whatsapp-icon:hover { transform: scale(1.1); }
+.whatsapp-icon svg { width: 30px; height: 30px; fill: var(--white); }
